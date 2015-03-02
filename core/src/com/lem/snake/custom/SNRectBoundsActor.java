@@ -29,19 +29,19 @@ public class SNRectBoundsActor extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
     	batch.draw(new TextureRegion(texture), this.getX(), this.getY(), this.getOriginX(), this.getOriginY(), this.getWidth(), this.getHeight(), this.getScaleX(), this.getScaleY(), this.getRotation());
-        batch.end();
+//        batch.end();
 //      
     	
     	rectangle.set(this.getX(), this.getY(), this.getWidth(), this.getHeight());
     	shapeRenderer.setProjectionMatrix(batch.getProjectionMatrix());
 //    
-        shapeRenderer.begin(ShapeType.Filled);
-    	  
-        shapeRenderer.setColor(c);
-        shapeRenderer.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
-        shapeRenderer.end();
-      
-        batch.begin();
+//        shapeRenderer.begin(ShapeType.Filled);
+//    	  
+//        shapeRenderer.setColor(c);
+//        shapeRenderer.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+//        shapeRenderer.end();
+//      
+//        batch.begin();
     }
     
     public Rectangle getRectangle() {
@@ -71,10 +71,12 @@ public class SNRectBoundsActor extends Actor {
     @Override
     public void setPosition(float x, float y) {
         super.setPosition(x, y);
+        super.setX(x);
+        super.setY(y);
     }
 
     public void setPosition(Vector2 postition) {
-        this.setPosition(postition.x, postition.y);
+        setPosition(postition.x, postition.y);
     }
     
     public void setTexture(Texture texture){

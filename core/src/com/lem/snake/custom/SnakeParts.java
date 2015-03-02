@@ -1,10 +1,9 @@
 package com.lem.snake.custom;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 
-public class SnakeParts extends SNRectBoundsActor {
+public abstract class SnakeParts extends SNRectBoundsActor {
 	
 	public static enum DIRECTIONS{
 		D1(new Vector2(10,0)),
@@ -42,5 +41,7 @@ public class SnakeParts extends SNRectBoundsActor {
 	public void doMovement(){
 		this.setPosition(this.getX()+currentDirection.getDirection().x, this.getY()+currentDirection.getDirection().y);
 	}
+	
+	public abstract void updateDirection();
 
 }
